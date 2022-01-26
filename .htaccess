@@ -1,0 +1,43 @@
+RewriteEngine On
+RewriteBase / 
+Options -Indexes +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /index.php [L]
+</IfModule>
+
+<IfModule mod_php5.c>
+  php_flag session.use_trans_sid off
+  php_value display_errors 0
+  php_value short_open_tag on
+  php_value mbstring.func_overload 2
+  php_value mbstring.internal_encoding UTF-8
+  php_value session.save_path "/tmp"
+  php_value post_max_size 64M
+    php_value upload_max_filesize 64M
+    php_value date.timezone  'Europe/Kaliningrad'
+    php_value max_execution_time 1200
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+#Cache-Control
+<IfModule mod_headers.c>
+        Header append Cache-Control "no-store, no-cache, must-revalidate"
+</IfModule>
+ 
+#Expires
+<IfModule mod_expires.c>
+        ExpiresActive Off ExpiresDefault "now"
+</IfModule>
+<IfModule mod_pagespeed.c>
+    ModPagespeed off
+</IfModule>
+
