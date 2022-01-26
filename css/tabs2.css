@@ -1,1 +1,68 @@
+.tab_td td{padding:10px;background:#acacac;}
 
+.tabs {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+.tabs label {
+    color: #555;
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 200px;
+    position: relative;
+    top: 2px;
+    text-align: center;
+    background:#acaca3;
+    margin:2px;padding:10px;	
+    border:0px solid #000;
+}
+
+
+.tabs input[type=radio]{
+    position: absolute;
+    left: -9999px;
+}
+
+
+.tabs #tab_1:checked  ~ #tab_l1,
+.tabs #tab_2:checked  ~ #tab_l2,
+.tabs #tab_3:checked  ~ #tab_l3,
+.tabs #tab_4:checked  ~ #tab_l4 {
+    background: #fff;
+    border-color: #fff;
+    top: 0;
+    z-index: 3;
+}
+
+.tabs .tabs_cont {
+    background: #fff;
+    position: relative;
+	padding:5px;
+    z-index: 2;
+    /*height: 230px;*/
+}
+
+
+.tabs .tabs_cont > div {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+    opacity: 0;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+}
+
+
+.tabs #tab_1:checked ~ .tabs_cont #tab_c1,
+.tabs #tab_2:checked ~ .tabs_cont #tab_c2,
+.tabs #tab_3:checked ~ .tabs_cont #tab_c3,
+.tabs #tab_4:checked ~ .tabs_cont #tab_c4 {
+    position: static;
+    left: 0;
+    opacity: 1;
+}

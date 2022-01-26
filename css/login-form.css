@@ -1,0 +1,15 @@
+#loginform{padding:10px;}
+
+#loginform input[name=username]{
+    border:1px solid #777777;
+    padding:5px;margin:5px;
+    border-radius:3px;
+    color:#020202;
+}
+
+#loginform input[name=password]{
+    border:1px solid #777777;
+    padding:5px;margin:5px;
+    border-radius:3px;
+    color:#020202;
+}

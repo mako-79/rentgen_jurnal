@@ -1,0 +1,7 @@
+@media print{
+	.ltab:before{
+		content:url(/online-training/images/tree.png);
+		position: absolute;
+        	z-index: -1;
+	}
+}
